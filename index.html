@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Van Escolar de Daniela e Edmilson</title>
+  
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container">
+      <div class="brand-box">
+        <h1>Van Escolar de Daniela e Edmilson</h1>
+        <p>Segurança, pontualidade e cuidado no transporte do seu filho</p>
+      </div>
+      <div class="price-banner">
+        <span>Mensalidade a partir de</span>
+        <strong>R$ 240,00</strong>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    
+    <!-- Coluna Esquerda: Cadastro do Aluno -->
+    <aside class="form-card">
+      <h2 class="form-title">Reserve uma Vaga</h2>
+      <p class="form-subtitle">Preencha os dados abaixo para cadastrar o aluno e garantir a vaga na van.</p>
+
+      <form id="cadastro-form">
+        <div class="form-group">
+          <label for="responsavel">Nome do Pai / Responsável *</label>
+          <input type="text" id="responsavel" placeholder="Ex: Maria Aparecida" required>
+        </div>
+
+        <div class="form-group">
+          <label for="aluno">Nome do Aluno(a) *</label>
+          <input type="text" id="aluno" placeholder="Ex: Pedro Henrique" required>
+        </div>
+
+        <div class="form-group">
+          <label for="escola">Escola *</label>
+          <input type="text" id="escola" placeholder="Nome da escola onde estuda" required>
+        </div>
+
+        <div class="form-group">
+          <label for="bairro">Bairro / Endereço de Embarque *</label>
+          <input type="text" id="bairro" placeholder="Ex: Centro / Rua Principal" required>
+        </div>
+
+        <div class="form-group">
+          <label for="turno">Turno Escolar *</label>
+          <select id="turno" required>
+            <option value="Manhã">Manhã</option>
+            <option value="Tarde">Tarde</option>
+            <option value="Integral">Integral</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">WhatsApp para Contato *</label>
+          <input type="tel" id="telefone" placeholder="(32) 99999-9999" required>
+        </div>
+
+        <button type="submit" class="btn-submit">Finalizar Cadastro da Vaga</button>
+        <div class="feedback-msg" id="feedback-msg">Cadastro enviado com sucesso! Entraremos em contato.</div>
+      </form>
+    </aside>
+
+    <!-- Coluna Direita: Foto em Destaque + Anúncio -->
+    <div class="right-column">
+      
+      <!-- Moldura Dedicada para a Foto da Van -->
+      <section class="photo-showcase">
+        <div class="photo-frame">
+          <img id="foto-van-preview" src="https://jimontadora.com.br/wp-content/uploads/2022/03/RENAULT-MASTER-L2H2-16-LUGARES-FIXOS-23.jpg" alt="Van Escolar de Daniela e Edmilson">
+        </div>
+        <div class="photo-caption">
+          <span>Nosso veículo escolar — Conforto e segurança</span>
+          <label for="upload-foto" class="btn-change-photo">Escolher foto do computador</label>
+          <input type="file" id="upload-foto" accept="image/*" class="hidden-input">
+        </div>
+      </section>
+
+      <!-- Detalhes do Anúncio -->
+      <article class="promo-content">
+        <span class="promo-tag">Vagas Abertas • Ano Letivo</span>
+        <h2>Transporte Escolar com Carinho e Responsabilidade</h2>
+        <p>
+          A <strong>Van Escolar de Daniela e Edmilson</strong> oferece transporte porta a porta com total segurança e pontualidade para alunos dos turnos da manhã e da tarde. Mensalidade acessível por apenas <strong>R$ 240,00</strong>!
+        </p>
+
+        <div class="highlights-grid">
+          <div class="highlight-box">
+            <h4>Mensalidade Fixa</h4>
+            <p>Apenas <strong>R$ 240,00/mês</strong> com condições especiais para irmãos.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Segurança Total</h4>
+            <p>Acompanhamento cuidadoso no embarque e desembarque na porta da escola.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Turnos Atendidos</h4>
+            <p>Vagas disponíveis para o turno da <strong>Manhã</strong> e da <strong>Tarde</strong>.</p>
+          </div>
+          <div class="highlight-box">
+            <h4>Veículo Vistoriado</h4>
+            <p>Transporte regularizado, confortável e com toda documentação em dia.</p>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5532999999999?text=Olá%20Daniela%20e%20Edmilson!%20Gostaria%20de%20saber%20mais%20sobre%20a%20vaga%20na%20van%20escolar." target="_blank" class="btn-whatsapp-main">
+          Falar com Daniela e Edmilson no WhatsApp
+        </a>
+      </article>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Van Escolar de Daniela e Edmilson • Mensalidade R$ 240,00 • Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("cadastro-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const feedback = document.getElementById("feedback-msg");
+      e.target.reset();
+      feedback.style.display = "block";
+      setTimeout(() => {
+        feedback.style.display = "none";
+      }, 4000);
+    });
+
+    document.getElementById("upload-foto").addEventListener("change", (e) => {
+      const arquivo = e.target.files[0];
+      if (arquivo) {
+        const leitor = new FileReader();
+        leitor.onload = function(evento) {
+          document.getElementById("foto-van-preview").src = evento.target.result;
+        };
+        leitor.readAsDataURL(arquivo);
+      }
+    });
+  </script>
+</body>
+</html>

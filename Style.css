@@ -1,0 +1,343 @@
+:root {
+  --primary-color: #18181b;      /* Preto Grafite */
+  --accent-color: #eab308;       /* Amarelo Van Escolar */
+  --accent-hover: #ca8a04;
+  --accent-text: #18181b;
+  --bg-color: #f4f4f5;
+  --card-bg: #ffffff;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --border-color: #e4e4e7;
+  --success-color: #16a34a;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* Header */
+.header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-bottom: 5px solid var(--accent-color);
+}
+
+.header-container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.brand-box h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  letter-spacing: -0.5px;
+}
+
+.brand-box p {
+  font-size: 0.95rem;
+  color: #e4e4e7;
+  margin-top: 0.25rem;
+}
+
+.price-banner {
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+  padding: 0.8rem 1.4rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(234, 179, 8, 0.25);
+}
+
+.price-banner span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.price-banner strong {
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Main Container */
+.main-container {
+  max-width: 1180px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 370px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Formulário de Cadastro do Aluno */
+.form-card {
+  background-color: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: var(--text-primary);
+}
+
+.form-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  background-color: #fafafa;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: #ffffff;
+}
+
+.btn-submit {
+  width: 100%;
+  background-color: var(--accent-color);
+  color: var(--accent-text);
+  border: none;
+  padding: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--accent-hover);
+}
+
+.feedback-msg {
+  display: none;
+  background-color: #dcfce7;
+  color: #166534;
+  padding: 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+  border: 1px solid #bbf7d0;
+}
+
+/* Coluna Direita */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Card Dedicado Exclusivamente para a Foto da Van */
+.photo-showcase {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #e4e4e7;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.photo-caption {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 0.85rem;
+  padding: 0 0.25rem;
+}
+
+.photo-caption span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.btn-change-photo {
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+
+.btn-change-photo:hover {
+  opacity: 0.9;
+}
+
+/* Card de Informações do Anúncio */
+.promo-content {
+  background-color: var(--card-bg);
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.promo-tag {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.7rem;
+}
+
+.promo-content h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+}
+
+.promo-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 1.4rem;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.highlight-box {
+  background-color: #fafafa;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-color);
+  padding: 0.95rem;
+  border-radius: 6px;
+}
+
+.highlight-box h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-box p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  color: var(--text-secondary);
+}
+
+.btn-whatsapp-main {
+  display: inline-block;
+  background-color: var(--success-color);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.9rem 1.6rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+}
+
+.btn-whatsapp-main:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--primary-color);
+  color: #a1a1aa;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 4rem;
+  border-top: 4px solid var(--accent-color);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  .photo-frame {
+    height: 250px;
+  }
+}
